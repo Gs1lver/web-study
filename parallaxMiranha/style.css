@@ -1,0 +1,50 @@
+body{
+    background-color: #131316;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+section{
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+.hidden{
+    opacity: 0; /* deixa o texto transparente */
+    filter: blur(5px); /* esfumaça o texto */
+    transform: translateX(-100%); /* move o texto para a esquerda */
+    transition: all 1s; /* tempo de transição */
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0); /* remove o blur */
+    transform: translateX(0); /* move o texto para a direita */
+}
+
+.fotos{
+    display: flex;
+    padding: 10px;
+}
+
+.foto:nth-child(2){
+    transition-delay: 200ms;
+}
+
+.foto:nth-child(3){
+    transition-delay: 400ms;
+}
+
+.foto:nth-child(4){
+    transition-delay: 600ms;
+}
+
+@media(prefers-reduced-motion){
+    .hidden{
+        transition: none;
+    }
+}
